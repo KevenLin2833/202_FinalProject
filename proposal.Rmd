@@ -1,0 +1,25 @@
+---
+title: "proposal"
+author: "Keven Lin & Adam Banwell"
+date: 11/03/2021
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# The name(s) of team member(s)
+Keven Lin & Adam Banwell
+
+# The link to the data source
+https://www.researchgate.net/publication/347935769_COVID-19_and_its_impact_on_education_social_life_and_mental_health_of_students_A_Survey
+https://www.kaggle.com/kunal28chaturvedi/covid19-and-its-impact-on-students?select=COVID-19+Survey+Student+Responses.csv
+
+# An overview of the dataset
+In this study, a cross-sectional survey is conducted with a sample size of 1182 students of different age groups from different educational institutions in Delhi National Capital Region (NCR).
+
+# A brief plan for the exploratory analysis: What questions can be answered from the dataset?
+Analize the impact of Covid 19 and its impact on students from various age range and see how they we effected both mentally and physically. 
