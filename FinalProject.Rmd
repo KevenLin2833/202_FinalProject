@@ -1,16 +1,46 @@
 ---
 title: "Covid-19 and its Impact on Students' Physical and Mental Health"
-Name: 'Keven Lin & Adam Banwell'
-output: html_notebook
+Name: Keven Lin & Adam Banwell
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r}
 library(readxl)
 library(ggplot2)
 library(dplyr)
+library(tidyr)
 ```
 
 ```{r}
-data = readf.csv("data.csv")
+data = read.csv("data.csv")
 data
+#sum(is.na(data[,'Rating.of.Online.Class.experience']))
+```
+
+```{r}
+cleanData = data %>% drop_na('Rating.of.Online.Class.experience')
+cleanData
+#sum(is.na(cleanData[,'Rating.of.Online.Class.experience']))
+sum(is.na(cleanData[,'Age.of.Subject']))
+```
+
+#age vs rating
+```{r}
+ggplot(cleanData, aes(x=Age.of.Subject, y=sum(Age.of.Subject)))+geom_bar(stat='identity')+facet_wrap(~Rating.of.Online.Class.experience, scales = "free")
+```
+
+
+### Rating of Online Class Experience vs Time Spent on Online Class
+```{r}
+temp = cleanData %>% group_by(Rating.of.Online.Class.experience) %>% summarise(avg_Time_Spent_On_Online_Class= sprintf(mean(Time.spent.on.Online.Class), fmt = '%.3f'))
+temp 
+temp %>% ggplot(aes(x=Rating.of.Online.Class.experience, y=avg_Time_Spent_On_Online_Class)) + 
+  geom_bar(stat='identity') + geom_text(aes(label = avg_Time_Spent_On_Online_Class))
+```
+
+```{r}
+#class hours vs rating
+ggplot(cleanData, aes(x=Time.spent.on.Online.Class, y=sum(Time.spent.on.Online.Class)))+geom_bar(stat='identity')+facet_wrap(~Rating.of.Online.Class.experience, scales = "free")
 ```
