@@ -22,4 +22,4 @@ https://www.kaggle.com/kunal28chaturvedi/covid19-and-its-impact-on-students?sele
 In this study, a cross-sectional survey is conducted with a sample size of 1182 students of different age groups from different educational institutions in Delhi National Capital Region (NCR).
 
 # A brief plan for the exploratory analysis: What questions can be answered from the dataset?
-Analize the impact of Covid 19 and its impact on students from various age range and see how they we effected both mentally and physically. 
+Analize the impact of Covid 19 and its impact on students from various age range and see how they we effected both mentally and physically.

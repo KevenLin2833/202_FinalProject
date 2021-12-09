@@ -1,0 +1,16 @@
+---
+title: "Covid-19 and its Impact on Students' Physical and Mental Health"
+Name: 'Keven Lin & Adam Banwell'
+output: html_notebook
+---
+
+```{r}
+library(readxl)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+data = readf.csv("data.csv")
+data
+```
