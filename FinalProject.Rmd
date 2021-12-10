@@ -79,9 +79,10 @@ temp = cleanData %>% count(Health.issue.during.lockdown, FitnessActivity)
 tempActive = temp %>% filter(FitnessActivity %in% c('active')) 
 tempNonActive = temp %>% filter(FitnessActivity %in% c('non-active'))
 
-tempActive %>% ggplot(aes(x='', y=n, fill=Health.issue.during.lockdown)) + geom_bar(width = 1, stat='identity')+ coord_polar("y", start=0) + ggtitle("Active Students vs Health Issues")
+tempActive %>% ggplot(mapping = aes(x=Health.issue.during.lockdown, y=n, fill = Health.issue.during.lockdown)) + geom_col() + geom_text(aes(label = n)) + ggtitle('Active Students vs Health Issues')
 
-tempNonActive %>% ggplot(aes(x='', y=n, fill=Health.issue.during.lockdown)) + geom_bar(width = 1, stat='identity')+ coord_polar("y", start=0) + ggtitle("Non-Active Students vs Health Issues")
+
+tempNonActive  %>% ggplot(mapping = aes(x=Health.issue.during.lockdown, y=n, fill = Health.issue.during.lockdown)) + geom_col() + geom_text(aes(label = n)) + ggtitle('Non-Active Students vs Health Issues')
 
 ```
 
@@ -106,9 +107,10 @@ temp =cleanData %>% count(Health.issue.during.lockdown, SocialMediaActivity)
 tempActive = temp %>% filter(SocialMediaActivity %in% c('active')) 
 tempNonActive = temp %>% filter(SocialMediaActivity %in% c('non-active'))
 
-tempActive %>% ggplot(aes(x='', y=n, fill=Health.issue.during.lockdown)) + geom_bar(width = 1, stat='identity')+ coord_polar("y", start=0) + ggtitle("Social Media: Active Students vs Health Issues")
+tempActive %>% ggplot(mapping = aes(x=Health.issue.during.lockdown, y=n, fill = Health.issue.during.lockdown)) + geom_col() + geom_text(aes(label = n)) + ggtitle('Social Media: Active Students vs Health Issues')
 
-tempNonActive %>% ggplot(aes(x='', y=n, fill=Health.issue.during.lockdown)) + geom_bar(width = 1, stat='identity')+ coord_polar("y", start=0) + ggtitle("Social Media: Non-Active Students vs Health Issues")
+
+tempNonActive %>% ggplot(mapping = aes(x=Health.issue.during.lockdown, y=n, fill = Health.issue.during.lockdown)) + geom_col() + geom_text(aes(label = n)) + ggtitle('Social Media: Non-Active Students vs Health Issues')
 ```
 # --- 
 # Social Media vs Weight Gain
